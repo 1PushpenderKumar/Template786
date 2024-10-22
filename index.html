@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .header {
+            background-color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border-radius: 30px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .buy-btn {
+            background-color: navy;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .buy-btn:hover {
+            background-color: #1f3b73;
+            transform: translateY(-5px);
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            padding: 50px;
+            border-bottom: 1px solid #ddd;
+            border-radius: 30px;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero {
+            background-color: #e0f0ff;
+            justify-content: space-between;
+            border-radius: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .hero-text h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .hero-text p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .hero-buttons .btn {
+            margin-right: 10px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 20px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .btn.primary:hover {
+            background-color: #1f3b73;
+            transform: translateY(-5px);
+        }
+
+        .primary {
+            background-color: navy;
+            color: white;
+        }
+
+        .secondary {
+            background-color: transparent;
+            border: 1px solid black;
+            color: black;
+        }
+
+        .hero-image {
+            flex: 1;
+            height: 400px;
+            background-image: url(ImagesSlide/figmaimage1.jpg);
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+        }
+
+        .features {
+            background-color: #fff;
+            flex-direction: row;
+            border-radius: 30px;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        .feature p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .feature-image {
+            flex: 1;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+        }
+
+        .feature-image-1 {
+            background-image: url(ImagesSlide/figmaimage5.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .feature-image-2 {
+            background-image: url(ImagesSlide/figmaimage3.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .feature-image-3 {
+            background-image: url(ImagesSlide/figmaimage4.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .pricing {
+            text-align: center;
+            background-color: #e0f0ff;
+            border-radius: 30px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        .pricing h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 36px;
+            margin: 20px 0;
+            color: #2980b9;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero, .features, .feature, .pricing {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text, .feature-text {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .buy-btn {
+                margin: 20px 0;
+            }
+
+            .hero-image, .feature-image {
+                height: 300px;
+                width: 100%;
+                border-radius: 20px;
+            }
+        }
+        
+        /* Additional styles for enhancements */
+        .cta {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #2980b9;
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .cta:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <h1 class="logo">Landing</h1>
+        <button class="buy-btn">Buy Now</button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Introduce Your Product Quickly & Effectively</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.</p>
+            <div class="hero-buttons">
+                <button class="btn primary">Purchase UI Kit</button>
+                <button class="btn secondary">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <section class="features">
+        <div class="feature-text">
+            <h3>Light, Fast & Powerful</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        </div>
+        <div class="feature-image feature-image-1"></div>
+    </section>
+
+    <section class="features">
+        <div class="feature-text">
+            <h3>Efficient Workflow</h3>
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+        <div class="feature-image feature-image-2"></div>
+    </section>
+
+    <section class="features">
+        <div class="feature-text">
+            <h3>Smart Design</h3>
+            <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        </div>
+        <div class="feature-image feature-image-3"></div>
+    </section>
+
+    <section class="pricing">
+        <h2>A Price To Suit Everyone</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="price">$40</div>
+        <button class="btn primary">Purchase Now</button>
+        <div class="cta">Special Offer: Buy 2 Get 1 Free!</div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2023 Yourcompany</p>
+        <p>Landing</p>
+    </footer>
+</body>
+</html>
