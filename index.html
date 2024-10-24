@@ -130,7 +130,7 @@
             flex: 1;
             height: 400px;
             background-image: url(ImagesSlide/figmaimage1.jpg);
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             border-radius: 50%;
         }
@@ -159,27 +159,22 @@
         .feature-image {
             flex: 1;
             height: 300px;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
+            background-repeat: no-repeat;
             border-radius: 50%;
         }
 
         .feature-image-1 {
             background-image: url(ImagesSlide/figmaimage5.jpg);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
         }
 
         .feature-image-2 {
             background-image: url(ImagesSlide/figmaimage3.jpg);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
         }
 
         .feature-image-3 {
             background-image: url(ImagesSlide/figmaimage4.jpg);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
         }
 
         .pricing {
@@ -189,8 +184,8 @@
             padding: 50px;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center vertically */
-            align-items: center; /* Center horizontally */
+            justify-content: center;
+            align-items: center;
             opacity: 0;
             animation: fadeIn 1.5s ease-in-out forwards;
         }
@@ -243,13 +238,21 @@
             }
 
             .hero-image, .feature-image {
-                height: 300px;
                 width: 100%;
+                height: 200px;
                 border-radius: 20px;
+                background-size: cover;
+            }
+
+            .navbar ul li a {
+                font-size: 14px; /* Adjusted the font size of the navbar links for smaller screens */
+            }
+
+            .logo {
+                font-size: 18px; /* Adjusted the font size of the logo */
             }
         }
-        
-        /* Additional styles for enhancements */
+
         .cta {
             margin: 20px 0;
             padding: 20px;
@@ -262,6 +265,15 @@
 
         .cta:hover {
             transform: translateY(-5px);
+        }
+
+        .feature-image-product {
+            background-image: url(ImagesSlide/figmaTemplate6.jpg);
+            background-size: contain;
+            background-position: center;
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
         }
     </style>
 </head>
@@ -314,6 +326,18 @@
         <div class="feature-image feature-image-3"></div>
     </section>
 
+    <section class="features">
+        <div class="feature-text">
+            <h3>Design & Build Your Own Landing Pages</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+            <p><strong>Title Goes Here</strong></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+            <p><strong>Title Goes Here</strong></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+        </div>
+        <div class="feature-image feature-image-product"></div>
+    </section>
+    
     <section class="pricing">
         <h2>A Price To Suit Everyone</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
